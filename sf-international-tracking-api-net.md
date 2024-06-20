@@ -1,12 +1,12 @@
-Australia Post Tracking API - .Net
+SF International Tracking API - .Net
 ================================
-Use .Net to track Australia Post shipments with Australia Post Tracking API.
+Use .Net to track SF International shipments with SF International Tracking API.
 
 Features
 --------
-- Real-time Australia Post tracking.
-- Batch Australia Post tracking.
-- Other features to manage your Australia Post tracking.
+- Real-time SF International tracking.
+- Batch SF International tracking.
+- Other features to manage your SF International tracking.
 
 Installation
 ------------
@@ -41,7 +41,7 @@ To use this API, you need to generate your API key.
 - Give a name to your API key, and click "Save" .
 
 
-Then, start to track your Australia Post shipments.
+Then, start to track your SF International shipments.
 
 Usage
 ----------
@@ -65,7 +65,7 @@ Create a tracking (Real-time tracking):
       
                   CreateTrackingParams createTrackingParams = new CreateTrackingParams();
                   createTrackingParams.trackingNumber = "0301006785462006320995";
-                  createTrackingParams.courierCode = "australia-post";
+                  createTrackingParams.courierCode = "sfb2c";
                   var apiResponse = trackingMore.Tracking.CreateTracking(createTrackingParams);
                   Console.WriteLine(apiResponse.meta.code);
                   Console.WriteLine(apiResponse.data.trackingNumber);
@@ -108,7 +108,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
                   CreateTrackingParams trackingParams1 = new CreateTrackingParams
                   {
                       trackingNumber = "LK201223662AU",
-                      courierCode = "australia-post"
+                      courierCode = "sfb2c"
                   };
                   
                   trackingParamsList.Add(trackingParams1);
@@ -116,7 +116,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
                   CreateTrackingParams trackingParams2 = new CreateTrackingParams
                   {
                       trackingNumber = "LH290032509AU",
-                      courierCode = "australia-post"
+                      courierCode = "sfb2c"
                   };
                   
                   trackingParamsList.Add(trackingParams2);
@@ -174,7 +174,7 @@ Get status of the shipment:
 
                   # Perform queries based on various conditions
                   # getTrackingResultsParams.trackingNumbers = "LH290032509AU,LK201223662AU";
-                  getTrackingResultsParams.courierCode = "australia-post";
+                  getTrackingResultsParams.courierCode = "sfb2c";
                   getTrackingResultsParams.createdDateMin = "2023-08-23T06:00:00+00:00";
                   getTrackingResultsParams.createdDateMax = "2023-09-05T07:20:42+00:00";
                   var apiResponse = trackingMore.Tracking.GetTrackingResults(getTrackingResultsParams);
